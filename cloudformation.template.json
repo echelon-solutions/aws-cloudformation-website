@@ -120,8 +120,6 @@
       }
       
     },
-    "Outputs": {
-      "CloudFrontDomainName": { "Fn::GetAtt": [ "cloudfrontDistribution", "DomainName" ] }
-    }
+    "Outputs": {}
 }
     
