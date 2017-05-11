@@ -94,26 +94,20 @@
           "HostedZoneName": { "Ref": "SiteNameParameter" },
           "RecordSets": [
             {
-              "Type" : "AWS::Route53::RecordSet",
-              "Properties" : {
-                "AliasTarget" : {
-                  "DNSName" : { "Fn::GetAtt": [ "cloudfrontDistribution", "DomainName" ] },
-                  "HostedZoneId" : "Z2FDTNDATAQYW2"
-                },
-                "Name" : { "Ref": "SiteNameParameter" },
-                "Type" : "A"
-              }
+              "AliasTarget" : {
+                "DNSName" : { "Fn::GetAtt": [ "cloudfrontDistribution", "DomainName" ] },
+                "HostedZoneId" : "Z2FDTNDATAQYW2"
+              },
+              "Name" : { "Ref": "SiteNameParameter" },
+              "Type" : "A"
             },
             {
-              "Type" : "AWS::Route53::RecordSet",
-              "Properties" : {
-                "AliasTarget" : {
-                  "DNSName" : { "Fn::GetAtt": [ "cloudfrontDistribution", "DomainName" ] },
-                  "HostedZoneId" : "Z2FDTNDATAQYW2"
-                },
-                "Name" : { "Fn::Join": [ "", [ "www.", { "Ref": "SiteNameParameter" } ] ] },
-                "Type" : "A"
-              }
+              "AliasTarget" : {
+                "DNSName" : { "Fn::GetAtt": [ "cloudfrontDistribution", "DomainName" ] },
+                "HostedZoneId" : "Z2FDTNDATAQYW2"
+              },
+              "Name" : { "Fn::Join": [ "", [ "www.", { "Ref": "SiteNameParameter" } ] ] },
+              "Type" : "A"
             }
           ]
         }
